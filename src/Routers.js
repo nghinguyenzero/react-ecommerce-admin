@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { Settings } from "@mui/icons-material";
 
 import Dashboard from "./components/Dashboard";
 import Products from "./components/Products";
+import Settings from "./components/Settings";
 
-function AppRouters() {
+export default function AppRouters() {
+    console.log('AppRouters');
     return ( 
     <Routes>
         <Route exact path="/" element={<Dashboard/>}/>
@@ -13,5 +14,3 @@ function AppRouters() {
         <Route exact path="/settings" element={<Settings/>}/>
     </Routes> );
 }
-
-export default AppRouters;

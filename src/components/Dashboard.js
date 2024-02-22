@@ -1,5 +1,11 @@
-function Dashboard() {
-    return ( <>DĐ</>);
-}
+import { Typography } from "@mui/material";
 
-export default Dashboard;
+export default function Dashboard() {
+    return ( <>
+    <Typography> 
+    Dashboard Dashboard Dashboard Dashboard 
+    Dashboard Dashboard Dashboard Dashboard Dashboard Dashboard 
+    Dashboard Dashboard Dashboard Dashboard Dashboard Dashboard 
+    </Typography>
+    </>);
+}

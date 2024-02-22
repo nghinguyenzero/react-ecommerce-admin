@@ -2,7 +2,7 @@ import { createTheme} from '@mui/material'
 export const DrawerWidth = 250
 
 export const Colors =  {
-    primary: '#5f2c3e',
+    primary: '#f06292',
     secondary: '#ba68c8',
     success: '#4caf50',
     info: '#00a2ff',
@@ -27,8 +27,8 @@ export const Colors =  {
 }
 
 // css util
-export const cssUtil =  {
-    boxShadow : 'rgba(149, 157, 165,0.2)'
+export const cssUtils =  {
+    boxShadow : 'rgba(149, 157, 165, 0.2) 0px 8px 24px'
 }
 
 const theme = createTheme({

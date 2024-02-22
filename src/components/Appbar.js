@@ -36,9 +36,8 @@ const Search = styled('div')(({ open }) => ({
     '&:hover': {
       backgroundColor: `1px solid ${Colors.light}`,
     },
-    marginRight: open ? 0 : 10,
-    marginLeft: 0,
-    width: '100%',
+    marginLeft: open ? 0 : 10,
+    // width: '100%',
   }));
   
   const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -52,16 +51,17 @@ const Search = styled('div')(({ open }) => ({
   }));
   
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    // color: 'inherit',
-    // fontSize: '1.25rem',
     '& .MuiInputBase-input': {
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)})`,
       transition: theme.transitions.create('width'),
       width: '100%',
-      [theme.breakpoints.up('md')]: {
+      [theme.breakpoints.up('sm')]: {
         width: '20ch',
+        '&:focus': {
+          width: '50ch'
+        }
       },
     },
   }));
@@ -80,9 +80,13 @@ export default function Appbar({open, handleDrawerOpen}) {
                 <MenuIcon />
             </IconButton>
             {!open && <Typography 
-            overflow={'visible'}
-                      fontWeight={'bold'} color={Colors.black} variant="h6" noWrap component="div">
-                    Admin dashboard
+                        overflow={'visible'}
+                        fontWeight={'bold'} 
+                        color={Colors.black} 
+                        variant="h6" 
+                        noWrap 
+                        component="div"
+                        > Admin dashboard
                     </Typography>
             }
             <Search open={open}>

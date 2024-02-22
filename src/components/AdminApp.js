@@ -26,7 +26,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     }),
   );
 
-function AdminApp() {
+export default function AdminApp() {
     const [open, setOpen] = useState(true)
     return ( 
     <Box 
@@ -36,14 +36,13 @@ function AdminApp() {
             height: '100vh'
         }}>
         <Router>
-            <NavDrawer open={open} setOpen={setOpen}>
+            <NavDrawer open={open} setOpen={setOpen}/>
                 <Main open={open}>
                   <DrawerHeader/>
+
                     <AppRouters/>
                 </Main>
-            </NavDrawer>
+            {/* </NavDrawer> */}
         </Router>
     </Box>);
 }
-
-export default AdminApp;

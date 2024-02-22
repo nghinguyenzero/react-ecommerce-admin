@@ -18,14 +18,11 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import GroupIcon from '@mui/icons-material/Group';
 import MailIcon from '@mui/icons-material/Mail';
-
 import SettingsIcon from '@mui/icons-material/Settings';
 
 import { Colors, DrawerWidth } from '../styles/theme';
 import AppBar from './Appbar';
 import { useNavigate } from 'react-router-dom';
-
-
 
 export const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -42,8 +39,8 @@ const MyListItemButton = ({ selected, icon, text, handleNavbarItemClicked}) => {
         sx={{...(selected&&{
           background: Colors.white,
           borderRadius: 2,
-           fontWeight: 'bold',
-            color: Colors.black
+          fontWeight: 'bold',
+          color: Colors.black
         })}}
       >
         <ListItemIcon sx={{color: selected && Colors.primary}}>
@@ -68,41 +65,35 @@ export default function NavDrawer({open, setOpen}) {
   };
 
   const handleNavbarItemClicked = (item) => {
+    console.log('handleNavbarItemClicked',item);
+
     setSelectedItem(item)
     navigate(item)
-    console.log({item});
+    console.log(item);
   }
 
   const routerList = [
     { 
       text: 'dashboard',
-      icon: <DashboardIcon/>,
-      // selected: false
+      icon: <DashboardIcon/>
     },
     { 
       text: 'products',
-      icon: <ReceiptIcon/>,
-      // selected: true
+      icon: <ReceiptIcon/>
     },
     { 
       text: 'messengers',
-      icon: <MailIcon/>,
-      // selected: true
+      icon: <MailIcon/>
     },
     { 
       text: 'settings',
-      icon: <SettingsIcon/>,
-      // selected: true
+      icon: <SettingsIcon/>
     },
     { 
       text: 'customers',
-      icon: <GroupIcon/>,
-      selected: true
-    },
-
+      icon: <GroupIcon/>
+    }
   ]
-
-  
 
   return (
     <Box sx={{ display: 'flex' }}>
